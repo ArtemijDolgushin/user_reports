@@ -53,7 +53,7 @@ def rename_report(username: str) -> None:
         os.rename(f'{username}.txt', f'old_{username}_{date_time}.txt')
 
 
-def make_report(user) -> None:
+def make_report(user: dict) -> None:
     if os.path.isfile(f'{user["username"]}.txt'):
         rename_report(user['username'])
     write_report(user)
